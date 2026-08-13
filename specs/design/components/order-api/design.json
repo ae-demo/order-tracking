@@ -35,26 +35,22 @@
       "resourceType": "thunder-app"
     },
     {
-      "candidates": [
+      "config": [
         {
-          "name": "sendgrid",
-          "package": "npm:@sendgrid/mail",
-          "style": "sdk"
+          "description": "Your SendGrid API key, used to authenticate outbound email sends.",
+          "key": "SENDGRID_API_KEY",
+          "secret": true
         },
         {
-          "name": "postmark",
-          "package": "npm:postmark",
-          "style": "sdk"
-        },
-        {
-          "name": "resend",
-          "package": "npm:resend",
-          "style": "sdk"
+          "description": "The verified sender email address status-change notifications are sent from.",
+          "key": "SENDGRID_FROM_EMAIL"
         }
       ],
-      "description": "Sends the customer-facing email notification whenever an order's status changes. No specific vendor is named in the requirements.",
+      "description": "SendGrid — sends the customer-facing email notification whenever an order's status changes.",
       "kind": "external",
-      "name": "email-provider"
+      "name": "email-provider",
+      "package": "npm:@sendgrid/mail",
+      "style": "sdk"
     }
   ],
   "description": "Ballerina service owning the order lifecycle: order creation (manual staff entry and an inbound API endpoint the external storefront website calls to create orders), status transitions (Placed, Processing, Shipped, Out for Delivery, Delivered, Cancelled), status history, courier assignment, and triggering customer email notifications on status change. Does not handle payments, inventory, returns, or courier route optimization.",
