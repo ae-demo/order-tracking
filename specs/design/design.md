@@ -90,22 +90,6 @@ sequenceDiagram
 
 ### Status update and customer notification
 
-```mermaid
-sequenceDiagram
-  participant Actor as Staff / Delivery Courier
-  participant API as order-api
-  participant DB as order-db
-  participant Email as Email Provider
-  participant Customer
-
-  Actor->>API: PATCH /orders/{id}/status
-  API->>DB: update Order.status
-  API->>DB: insert OrderStatusEvent
-  API->>Email: send status-changed notification
-  Email-->>Customer: email delivered
-  API-->>Actor: 200 OK
-```
-
 ### Customer tracks an order
 
 ```mermaid
@@ -217,22 +201,6 @@ sequenceDiagram
 ```
 
 ### Status update and customer notification
-
-```mermaid
-sequenceDiagram
-  participant Actor as Staff / Delivery Courier
-  participant API as order-api
-  participant DB as order-db
-  participant Email as Email Provider
-  participant Customer
-
-  Actor->>API: PATCH /orders/{id}/status
-  API->>DB: update Order.status
-  API->>DB: insert OrderStatusEvent
-  API->>Email: send status-changed notification
-  Email-->>Customer: email delivered
-  API-->>Actor: 200 OK
-```
 
 ### Customer tracks an order
 

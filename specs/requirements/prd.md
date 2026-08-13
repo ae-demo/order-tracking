@@ -155,8 +155,8 @@ staff entry or the external website's own checkout, not from this app.
 ## Open Questions
 
 1. How are couriers assigned to orders — always manually by staff, or should
- the system suggest/auto-assign a courier? *(deferred — does not block
- design; Phase 1 assumes manual staff assignment, per story 10)*
+the system suggest/auto-assign a courier? *(deferred — does not block
+design; Phase 1 assumes manual staff assignment, per story 10)*
 
 ## Further Notes
 
