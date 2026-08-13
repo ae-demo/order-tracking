@@ -1,0 +1,21 @@
+title Order Tracking App
+
+phase 1
+
+component order-webapp as "Order Tracking Portal" web-application [stories: 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12]
+component order-api as "Order Tracking API" service [stories: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+component order-db as "Orders Database" database
+
+east user-auth as "Thunder Auth" identity-server
+south email-provider as "Email Provider" service
+north storefront-website as "External Storefront Website"
+
+north -> order-webapp
+storefront-website -> order-api
+
+order-webapp -> order-api
+order-webapp -> user-auth
+
+order-api -> order-db
+order-api -> user-auth
+order-api -> email-provider

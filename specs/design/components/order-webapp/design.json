@@ -1,0 +1,42 @@
+{
+  "name": "order-webapp",
+  "type": "web-application",
+  "version": "0.1.0",
+  "language": "TypeScript",
+  "buildpack": "docker",
+  "appPath": "order-webapp",
+  "entrypoint": "deployment/web-application",
+  "exposure": "internet",
+  "stories": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "dependencies": [
+    {
+      "description": "Backend API for orders, statuses, courier assignment, and dashboard data — the webapp's only data source.",
+      "kind": "component",
+      "name": "order-api"
+    },
+    {
+      "description": "Thunder-issued OIDC client used to sign in Customers, Staff, and Delivery Couriers via the platform IDP.",
+      "kind": "platform-resource",
+      "name": "user-auth",
+      "resourceType": "thunder-app"
+    }
+  ],
+  "description": "Single-page React application serving all three signed-in roles — Customer, Staff, and Delivery Courier — each with their own set of screens behind one shell: customers track their own orders, staff manage the full order dashboard and lifecycle, couriers see and update their assigned deliveries. Talks only to order-api; holds no business logic or credentials of its own, and performs no order creation via direct external-API integration.",
+  "skillsPinned": [
+    "wireframes",
+    "react-webapp",
+    "thunder-authentication"
+  ]
+}
